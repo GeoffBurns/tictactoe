@@ -7,52 +7,24 @@
 
 import SwiftUI
 import TicTacUtils
-
-class GameBoardVM : ObservableObject
+ 
+class GameBoardVM : ObservableObject, ITicTacToeGame
 {
     @Published var squares =  Owner.blankSquares( 9)
- 
+    @Published var isOver : Bool = false;
+    
     var humanPlayer = Owner.cross
     var computerPlayer = Owner.naught
     
     func reset() {
           squares = Owner.blankSquares( 9)
      }
-    
-    func hasWon(player: Owner) -> Bool {
-        return  squares.hasWon(player: player)
-    }
-    var winner : Owner?
-    {
-        get {
-            if hasWon(player: .cross)
-            {
-                return .cross
-            }
-            else if hasWon(player: .naught)
-            {
-                return .naught
-            }
-            else if squares.free.isEmpty
-            {
-            return .vacant
-            }
-            return nil
-        }
-    }
      
-    @Published var isOver : Bool = false;
     func checkIsOver()
     {
         if winner != nil
         {
             isOver = true
-        }
-    }
-    var showWinner : String
-    {
-        get{
-            return  "You " + (winner?.showWinnerAsCross ?? " ")
         }
     }
     func randomMove(player: Owner)    {
@@ -80,7 +52,5 @@ class GameBoardVM : ObservableObject
             self.bestMove(player: self.computerPlayer)
             self.checkIsOver()
             }
-    
-    }
-
+    } 
 }
