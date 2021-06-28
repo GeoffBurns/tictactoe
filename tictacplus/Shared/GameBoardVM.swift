@@ -17,7 +17,8 @@ class GameBoardVM : ObservableObject
     
     func reset() {
           squares = Owner.blankSquares( 9)
-     } 
+     }
+    
     func hasWon(player: Owner) -> Bool {
         return  squares.hasWon(player: player)
     }

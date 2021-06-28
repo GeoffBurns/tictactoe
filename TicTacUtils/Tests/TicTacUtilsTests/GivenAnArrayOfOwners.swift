@@ -17,4 +17,11 @@
              
             XCTAssertTrue(crossedSquares.isFull)
         }
+        func testWhenHasOneSpace_Then_MoveReturnsOnlyChoice() {
+            var oneLeft = [Owner](repeating: .cross, count: 9)
+            let freeIndex = 3
+            oneLeft[freeIndex] = .vacant
+            XCTAssertFalse(oneLeft.isFull)
+            XCTAssert(oneLeft.randomFreeIndex == freeIndex)
+        }
     }
