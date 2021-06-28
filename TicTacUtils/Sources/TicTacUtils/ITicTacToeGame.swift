@@ -41,5 +41,13 @@ public extension ITicTacToeGame
             return  "You " + (winner?.showWinnerAsCross ?? " ")
         }
     }
-
+}
+public class TicTacToeGame
+{
+    public static var startSquares : [Owner]
+    {
+        get{
+            return  Owner.blankSquares( 9)
+        }
+    } 
 }

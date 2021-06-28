@@ -10,14 +10,14 @@ import TicTacUtils
  
 class GameBoardVM : ObservableObject, ITicTacToeGame
 {
-    @Published var squares =  Owner.blankSquares( 9)
+    @Published var squares =  TicTacToeGame.startSquares
     @Published var isOver : Bool = false;
     
     var humanPlayer = Owner.cross
     var computerPlayer = Owner.naught
     
     func reset() {
-          squares = Owner.blankSquares( 9)
+        squares = TicTacToeGame.startSquares
      }
      
     func checkIsOver()
@@ -52,5 +52,5 @@ class GameBoardVM : ObservableObject, ITicTacToeGame
             self.bestMove(player: self.computerPlayer)
             self.checkIsOver()
             }
-    } 
+    }
 }
