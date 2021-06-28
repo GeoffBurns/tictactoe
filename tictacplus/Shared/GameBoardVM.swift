@@ -62,6 +62,13 @@ class GameBoardVM : ObservableObject
         }
         squares[squares.randomFreeIndex] = player
     }
+    func bestMove(player: Owner)    {
+        if squares.isFull
+        {
+            return
+        }
+        squares[squares.bestMoveIndex(player: player)] = player
+    }
     func play(squareIndex:Int) {
         if  squares[squareIndex] != .vacant
         {
@@ -70,7 +77,7 @@ class GameBoardVM : ObservableObject
         squares[squareIndex] =  humanPlayer
         checkIsOver()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-            self.randomMove(player: self.computerPlayer)
+            self.bestMove(player: self.computerPlayer)
             self.checkIsOver()
             }
     

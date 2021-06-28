@@ -27,6 +27,20 @@ public enum Owner
             }
         }
     }
+    public var opponent: Owner
+    {
+        get {
+            switch self
+            {
+            case .vacant:
+                return .vacant
+            case .naught:
+                return .cross
+            case .cross:
+                return .naught
+            }
+        }
+    }
     public var showWinnerAsCross : String
     {
         switch self
@@ -75,6 +89,7 @@ extension Array where Element == Owner
        return moves[move]
       }
    }
+    
    public var isFull:   Bool   {
        get
       {
@@ -84,5 +99,30 @@ extension Array where Element == Owner
     public func hasWon(player: Owner) -> Bool {
         return WinCondition.all.contains { $0.line.allSatisfy { self[$0] == player }}
     }
-        
+    public func complete(player: Owner) -> Int? {
+        for condition in WinCondition.all
+        {
+            let line = condition.line
+            if line.filter({ self[$0] == player }).count == 2
+            {
+                let emptySquares = line.filter{ self[$0] == .vacant }
+                if emptySquares.count == 1
+                {
+                    return emptySquares[0]
+                }
+            }
+        }
+        return nil
+    }
+    public func bestMoveIndex(player: Owner) -> Int {
+       if let winMoveIndex = complete(player: player)
+       {
+        return winMoveIndex
+       }
+        if let stopLossIndex = complete(player: player.opponent)
+        {
+         return stopLossIndex
+        }
+        return self.randomFreeIndex
+    }
 }
