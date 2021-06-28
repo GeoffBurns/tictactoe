@@ -27,7 +27,10 @@ class GameBoardVM : ObservableObject, ITicTacToeGame
         if winner != nil
         {
             winSquares = squares.winSquares
-            isOver = true
+            
+            Delay.seconds(0.5) {
+                self.isOver = true
+            }
         }
     }
     func randomMove(player: Owner)    {
@@ -51,7 +54,7 @@ class GameBoardVM : ObservableObject, ITicTacToeGame
         }
         squares[squareIndex] =  humanPlayer
         checkIsOver()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+        Delay.seconds(0.4) {
             self.bestMove(player: self.computerPlayer)
             self.checkIsOver()
             }
