@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:TicTacUtils">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/aurelie/Documents/xcode/tictactoe/tictacplus/TicTacPlus.xcodeproj">
+   </FileRef>
+</Workspace>
