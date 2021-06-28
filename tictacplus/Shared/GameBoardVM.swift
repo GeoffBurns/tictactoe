@@ -61,15 +61,18 @@ class GameBoardVM : ObservableObject
         }
         squares[squares.randomFreeIndex] = player
     }
-    func turn(squareIndex:Int) {
+    func play(squareIndex:Int) {
         if  squares[squareIndex] != .vacant
         {
             return
         }
         squares[squareIndex] =  humanPlayer
         checkIsOver()
-        randomMove(player: computerPlayer)
-        checkIsOver()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+            self.randomMove(player: self.computerPlayer)
+            self.checkIsOver()
+            }
+    
     }
 
 }

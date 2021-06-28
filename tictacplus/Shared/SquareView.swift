@@ -12,7 +12,7 @@ struct SquareView: View {
     var index: Int
     var body: some View {
         Button(action: {
-            board.turn(squareIndex: index)
+            board.play(squareIndex: index)
         }) {
             Text( board.squares[index].show)
                 .foregroundColor(Color.white)
