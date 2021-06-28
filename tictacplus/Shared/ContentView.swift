@@ -12,6 +12,9 @@ struct ContentView: View {
   
       var body: some View {
           VStack {
+            Text("Tic Tac Toe")
+                    .foregroundColor(Color.blue)
+                    .font(.largeTitle) 
             HStack {
               SquareView(index:0)
               SquareView(index:1)
