@@ -11,6 +11,7 @@ import TicTacUtils
 class GameBoardVM : ObservableObject, ITicTacToeGame
 {
     @Published var squares =  TicTacToeGame.startSquares
+    @Published var winSquares =  TicTacToeGame.startSquares
     @Published var isOver : Bool = false;
     
     var humanPlayer = Owner.cross
@@ -18,12 +19,14 @@ class GameBoardVM : ObservableObject, ITicTacToeGame
     
     func reset() {
         squares = TicTacToeGame.startSquares
+        winSquares = TicTacToeGame.startSquares
      }
      
     func checkIsOver()
     {
         if winner != nil
         {
+            winSquares = squares.winSquares
             isOver = true
         }
     }

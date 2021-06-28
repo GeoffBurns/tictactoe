@@ -89,7 +89,6 @@ extension Array where Element == Owner
        return moves[move]
       }
    }
-    
    public var isFull:   Bool   {
        get
       {
@@ -113,6 +112,36 @@ extension Array where Element == Owner
             }
         }
         return nil
+    }
+    public func winSquaresFor(player: Owner) -> [Owner]? {
+        for condition in WinCondition.all
+        {
+            let line = condition.line
+            if line.allSatisfy({ self[$0] == player })
+            {
+                var winSquares = TicTacToeGame.startSquares
+                for index in line
+                {
+                    winSquares[index] = player
+                }
+                return winSquares
+            }
+        }
+        return nil
+    }
+    public var winSquares: [Owner] {
+        get
+       {
+            if let crossWin = winSquaresFor(player: .cross)
+            {
+                return crossWin
+            }
+            if let naughtWin = winSquaresFor(player: .naught)
+            {
+                return naughtWin
+            }
+            return TicTacToeGame.startSquares
+       }
     }
     public func bestMoveIndex(player: Owner) -> Int {
        if let winMoveIndex = complete(player: player)

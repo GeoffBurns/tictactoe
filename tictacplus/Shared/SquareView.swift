@@ -18,7 +18,7 @@ struct SquareView: View {
                 .foregroundColor(Color.white)
                 .font(.largeTitle)
                 .frame(minWidth: 80, minHeight: 80)
-                .background(Color.blue)
+                .background(board.winSquares[index].color)
                 .padding(EdgeInsets(top: 3, leading: 3, bottom: 3, trailing: 3))
         }
     }

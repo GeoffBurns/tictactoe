@@ -20,6 +20,8 @@
 		658C24392689B00D00993CCF /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658C24372689B00D00993CCF /* SquareView.swift */; };
 		658C246F2689CA2D00993CCF /* TicTacUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 658C246E2689CA2D00993CCF /* TicTacUtils */; };
 		658C24712689D4A800993CCF /* TicTacUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 658C24702689D4A800993CCF /* TicTacUtils */; };
+		658C2473268A62D400993CCF /* OwnerExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658C2472268A62D400993CCF /* OwnerExtentions.swift */; };
+		658C2474268A62D400993CCF /* OwnerExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658C2472268A62D400993CCF /* OwnerExtentions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,7 @@
 		658C24342689AF8800993CCF /* GameBoardVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardVM.swift; sourceTree = "<group>"; };
 		658C24372689B00D00993CCF /* SquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
 		658C246C2689C7E700993CCF /* TicTacPlus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TicTacPlus.entitlements; sourceTree = "<group>"; };
+		658C2472268A62D400993CCF /* OwnerExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerExtentions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,7 @@
 				658C23F92689AE6500993CCF /* Assets.xcassets */,
 				658C24342689AF8800993CCF /* GameBoardVM.swift */,
 				658C24372689B00D00993CCF /* SquareView.swift */,
+				658C2472268A62D400993CCF /* OwnerExtentions.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -349,6 +353,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				658C2473268A62D400993CCF /* OwnerExtentions.swift in Sources */,
 				658C24352689AF8800993CCF /* GameBoardVM.swift in Sources */,
 				658C24222689AE6500993CCF /* ContentView.swift in Sources */,
 				658C24202689AE6500993CCF /* TicTacPlusApp.swift in Sources */,
@@ -361,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				658C24362689AF8800993CCF /* GameBoardVM.swift in Sources */,
+				658C2474268A62D400993CCF /* OwnerExtentions.swift in Sources */,
 				658C24212689AE6500993CCF /* TicTacPlusApp.swift in Sources */,
 				658C24392689B00D00993CCF /* SquareView.swift in Sources */,
 			);

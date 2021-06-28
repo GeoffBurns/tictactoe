@@ -8,6 +8,7 @@ import SwiftUI
 public protocol ITicTacToeGame
 {
     var squares : [Owner] { get }
+    var winSquares : [Owner] { get }
     var isOver : Bool{ get }
 }
 
@@ -42,7 +43,7 @@ public extension ITicTacToeGame
         }
     }
 }
-public class TicTacToeGame
+public enum TicTacToeGame
 {
     public static var startSquares : [Owner]
     {
