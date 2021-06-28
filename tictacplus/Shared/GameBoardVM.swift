@@ -12,16 +12,14 @@ class GameBoardVM : ObservableObject
 {
     @Published var squares =  Owner.blankSquares( 9)
  
-    var currentPlayer = Owner.cross
+    var humanPlayer = Owner.cross
     var computerPlayer = Owner.naught
     
     func reset() {
           squares = Owner.blankSquares( 9)
-     }
-     
-   
+     } 
     func hasWon(player: Owner) -> Bool {
-        return WinCondition.all.contains { $0.line.allSatisfy { squares[$0] == player }}
+        return  squares.hasWon(player: player)
     }
     var winner : Owner?
     {
@@ -68,7 +66,7 @@ class GameBoardVM : ObservableObject
         {
             return
         }
-        squares[squareIndex] =  currentPlayer
+        squares[squareIndex] =  humanPlayer
         checkIsOver()
         randomMove(player: computerPlayer)
         checkIsOver()

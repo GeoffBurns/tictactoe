@@ -81,4 +81,8 @@ extension Array where Element == Owner
            return self.free.isEmpty
       }
    }
+    public func hasWon(player: Owner) -> Bool {
+        return WinCondition.all.contains { $0.line.allSatisfy { self[$0] == player }}
+    }
+        
 }
