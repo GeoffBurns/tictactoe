@@ -19,9 +19,8 @@ struct SquareView: View {
         Button(action: {
             board.play(squareIndex: index)
         }) {
-            Text( board.squares[index].show)
+             board.squares[index].image
                 .foregroundColor(Color.white)
-                .font(.largeTitle)
                 .frame(minWidth:  width, minHeight: width)
         } 
         .background(board.winSquares[index].color)
