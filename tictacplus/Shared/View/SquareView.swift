@@ -9,10 +9,10 @@ import SwiftUI
 
 struct SquareView: View {
     @EnvironmentObject var board: GameBoardVM
-    #if targetEnvironment(macCatalyst)
-    let width : CGFloat =  .infinity
+    #if os(OSX) || os(macOS) || targetEnvironment(macCatalyst)
+    let width : CGFloat =  103
     #else
-    let width : CGFloat =  Device.isPhone ? 83 : 123
+    let width : CGFloat =  Device.isPhone ? 83 : 153
     #endif
     var index: Int
     var body: some View {
