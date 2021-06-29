@@ -1,35 +1,47 @@
 //
 //  ContentView.swift
-//  Shared
+//  TicTacPlus
 //
 //  Created by Geoff Burns on 28/6/21.
 //
 
 import SwiftUI
 
+ 
+
 struct ContentView: View {
      @EnvironmentObject var board: GameBoardVM
   
       var body: some View {
           VStack {
+            Spacer()
             Text("Tic Tac Toe")
                     .foregroundColor(Color.blue)
-                    .font(.largeTitle) 
+                    .font(.largeTitle)
+             
             HStack {
-              SquareView(index:0)
-              SquareView(index:1)
-              SquareView(index:2)
+                Spacer()
+                SquareView(index:0)
+                SquareView(index:1)
+                SquareView(index:2)
+                Spacer()
             }
             HStack {
-              SquareView(index:3)
-              SquareView(index:4)
-              SquareView(index:5)
+                    Spacer()
+                    SquareView(index:3)
+                    SquareView(index:4)
+                    SquareView(index:5)
+                    Spacer()
             }
             HStack {
-              SquareView(index:6)
-              SquareView(index:7)
-              SquareView(index:8)
+                    Spacer()
+                    SquareView(index:6)
+                    SquareView(index:7)
+                    SquareView(index:8)
+                    Spacer()
             }
+            
+            Spacer()
             }
           .alert(isPresented: $board.isOver) {
                   Alert(title: Text( board.showWinner) ,  dismissButton: Alert.Button.destructive(Text("Try Again"), action:

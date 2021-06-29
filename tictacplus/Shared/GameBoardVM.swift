@@ -47,12 +47,15 @@ class GameBoardVM : ObservableObject, ITicTacToeGame
         }
         squares[squares.bestMoveIndex(player: player)] = player
     }
-    func play(squareIndex:Int) {
+    func humanMove(squareIndex:Int)    {
         if  squares[squareIndex] != .vacant
         {
             return
         }
         squares[squareIndex] =  humanPlayer
+    }
+    func play(squareIndex:Int) {
+        humanMove(squareIndex: squareIndex)
         checkIsOver()
         Delay.seconds(0.4) {
             self.bestMove(player: self.computerPlayer)
