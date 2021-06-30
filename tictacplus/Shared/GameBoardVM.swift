@@ -33,21 +33,21 @@ class GameBoardVM : ObservableObject, ITicTacToeGame
             }
         }
     }
-    func randomMove(player: Owner)    {
+    func randomMove(player: Owner) {
         if squares.isFull
         {
             return
         }
         squares[squares.randomFreeIndex] = player
     }
-    func bestMove(player: Owner)    {
+    func bestMove(player: Owner) {
         if squares.isFull
         {
             return
         }
         squares[squares.bestMoveIndex(player: player)] = player
     }
-    func humanMove(squareIndex:Int)    {
+    func humanMove(squareIndex:Int) {
         if  squares[squareIndex] != .vacant
         {
             return

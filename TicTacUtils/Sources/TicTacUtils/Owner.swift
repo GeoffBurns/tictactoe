@@ -13,10 +13,8 @@ public enum Owner
     case naught
     case cross
     
-    public var show: String
-    {
-        get {
-            switch self
+    public var show: String {
+        switch self
             {
             case .vacant:
                 return " "
@@ -25,11 +23,8 @@ public enum Owner
             case .cross:
                 return "X"
             }
-        }
     }
-    public var opponent: Owner
-    {
-        get {
+    public var opponent: Owner {
             switch self
             {
             case .vacant:
@@ -39,10 +34,8 @@ public enum Owner
             case .cross:
                 return .naught
             }
-        }
     }
-    public var showWinnerAsCross : String
-    {
+    public var showWinnerAsCross : String {
         switch self
         {
         case .vacant:
@@ -69,32 +62,25 @@ public enum Owner
     {
        return [Owner](repeating: .vacant, count: n)
     }
-     
 }
 extension Array where Element == Owner
 {
-    public var free:  [Int]  { get
-      {
+    public var free:  [Int]  { get {
       self
           .enumerated()
           .filter { $0.element == .vacant }
           .map { $0.offset }
       }
-   }
-  public var randomFreeIndex:   Int   { get
-      {
+    }
+    public var randomFreeIndex: Int {
        let moves =  self.free
        
        let move = Int.random(in: 0..<moves.count)
        return moves[move]
-      }
-   }
-   public var isFull:   Bool   {
-       get
-      {
+    }
+    public var isFull: Bool {
            return self.free.isEmpty
-      }
-   }
+    }
     public func hasWon(player: Owner) -> Bool {
         return WinCondition.all.contains { $0.line.allSatisfy { self[$0] == player }}
     }
@@ -130,8 +116,6 @@ extension Array where Element == Owner
         return nil
     }
     public var winSquares: [Owner] {
-        get
-       {
             if let crossWin = winSquaresFor(player: .cross)
             {
                 return crossWin
@@ -140,8 +124,7 @@ extension Array where Element == Owner
             {
                 return naughtWin
             }
-            return TicTacToeGame.startSquares
-       }
+            return TicTacToeGame.startSquares 
     }
     public func bestMoveIndex(player: Owner) -> Int {
        if let winMoveIndex = complete(player: player)
