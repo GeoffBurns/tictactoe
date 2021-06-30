@@ -133,10 +133,10 @@
 		658C23F62689AE6300993CCF /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				659F529F268C4530005B9A64 /* ViewModel */,
 				658C24F0268C38EA00993CCF /* Assets.xcassets */,
 				658C247C268B01D400993CCF /* View */,
 				658C23F72689AE6300993CCF /* TicTacPlusApp.swift */,
-				658C24342689AF8800993CCF /* GameBoardVM.swift */,
 				658C2472268A62D400993CCF /* OwnerExtentions.swift */,
 				658C2479268B016B00993CCF /* Device.swift */,
 			);
@@ -204,6 +204,14 @@
 				658C247D268C27F000993CCF /* BoardView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		659F529F268C4530005B9A64 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				658C24342689AF8800993CCF /* GameBoardVM.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

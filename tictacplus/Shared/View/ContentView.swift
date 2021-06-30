@@ -22,6 +22,7 @@ struct ContentView: View {
             BoardView()
             Spacer()
             }
+          .ignoresSafeArea(.all, edges: .all)
           .background(Color.white)
           .alert(isPresented: $board.isOver) {
                   Alert(title: Text( board.showWinner) ,  dismissButton: Alert.Button.destructive(Text("Try Again"), action:

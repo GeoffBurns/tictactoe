@@ -41,7 +41,7 @@ extension Owner
            
      }
     public static let smallfont : CGFloat = 35
-    public static let bigfont : CGFloat = 60
+    public static let bigfont : CGFloat = 80
     public static var fontsize : CGFloat {get{ Device.isPad ? bigfont : smallfont}}
 }
  
