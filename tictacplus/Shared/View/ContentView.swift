@@ -19,30 +19,10 @@ struct ContentView: View {
                     .foregroundColor(Color.blue)
                     .font(.largeTitle)
              
-            HStack {
-                Spacer()
-                SquareView(index:0)
-                SquareView(index:1)
-                SquareView(index:2)
-                Spacer()
-            }
-            HStack {
-                    Spacer()
-                    SquareView(index:3)
-                    SquareView(index:4)
-                    SquareView(index:5)
-                    Spacer()
-            }
-            HStack {
-                    Spacer()
-                    SquareView(index:6)
-                    SquareView(index:7)
-                    SquareView(index:8)
-                    Spacer()
-            }
-            
+            BoardView()
             Spacer()
             }
+          .background(Color.white)
           .alert(isPresented: $board.isOver) {
                   Alert(title: Text( board.showWinner) ,  dismissButton: Alert.Button.destructive(Text("Try Again"), action:
                               board.reset

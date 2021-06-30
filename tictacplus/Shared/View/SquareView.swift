@@ -9,22 +9,32 @@ import SwiftUI
 
 struct SquareView: View {
     @EnvironmentObject var board: GameBoardVM
-    #if os(OSX) || os(macOS) || targetEnvironment(macCatalyst)
-    let width : CGFloat =  103
-    #else
+ 
     let width : CGFloat =  Device.isPhone ? 83 : 153
-    #endif
     var index: Int
     var body: some View {
+        #if os(OSX) || os(macOS) || targetEnvironment(macCatalyst)
+        Button(board.squares[index].show) {
+            board.play(squareIndex: index)
+        }
+        .font(.system(size: 92, weight: .bold, design: .default))
+        .foregroundColor(Color.white)
+        .frame(minWidth:  103, minHeight: 103)
+        .buttonStyle(PlainButtonStyle())
+        .background(board.winSquares[index].color)
+        .padding(EdgeInsets(top: 3, leading: 3, bottom: 3, trailing: 3))
+        #else
         Button(action: {
             board.play(squareIndex: index)
         }) {
              board.squares[index].image
                 .foregroundColor(Color.white)
                 .frame(minWidth:  width, minHeight: width)
-        } 
+        }
         .background(board.winSquares[index].color)
         .padding(EdgeInsets(top: 3, leading: 3, bottom: 3, trailing: 3))
+        #endif
+     
     }
 }
 

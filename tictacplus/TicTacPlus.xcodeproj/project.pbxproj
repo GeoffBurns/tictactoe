@@ -25,6 +25,8 @@
 		658C2478268ACC5D00993CCF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658C23F82689AE6300993CCF /* ContentView.swift */; };
 		658C247A268B016B00993CCF /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658C2479268B016B00993CCF /* Device.swift */; };
 		658C247B268B016B00993CCF /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658C2479268B016B00993CCF /* Device.swift */; };
+		658C247E268C27F000993CCF /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658C247D268C27F000993CCF /* BoardView.swift */; };
+		658C247F268C27F000993CCF /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658C247D268C27F000993CCF /* BoardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,7 @@
 		658C246C2689C7E700993CCF /* TicTacPlus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TicTacPlus.entitlements; sourceTree = "<group>"; };
 		658C2472268A62D400993CCF /* OwnerExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerExtentions.swift; sourceTree = "<group>"; };
 		658C2479268B016B00993CCF /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		658C247D268C27F000993CCF /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +201,7 @@
 			children = (
 				658C23F82689AE6300993CCF /* ContentView.swift */,
 				658C24372689B00D00993CCF /* SquareView.swift */,
+				658C247D268C27F000993CCF /* BoardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -366,6 +370,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				658C247E268C27F000993CCF /* BoardView.swift in Sources */,
 				658C2473268A62D400993CCF /* OwnerExtentions.swift in Sources */,
 				658C24352689AF8800993CCF /* GameBoardVM.swift in Sources */,
 				658C24222689AE6500993CCF /* ContentView.swift in Sources */,
@@ -379,6 +384,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				658C247F268C27F000993CCF /* BoardView.swift in Sources */,
 				658C24362689AF8800993CCF /* GameBoardVM.swift in Sources */,
 				658C2478268ACC5D00993CCF /* ContentView.swift in Sources */,
 				658C2474268A62D400993CCF /* OwnerExtentions.swift in Sources */,

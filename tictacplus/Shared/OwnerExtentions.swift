@@ -40,7 +40,7 @@ extension Owner
                 Image(systemName: self.imageName).font(Font.system(size: Owner.fontsize, weight: .black))
            
      }
-    public static let smallfont : CGFloat = 30
+    public static let smallfont : CGFloat = 35
     public static let bigfont : CGFloat = 60
     public static var fontsize : CGFloat {get{ Device.isPad ? bigfont : smallfont}}
 }
