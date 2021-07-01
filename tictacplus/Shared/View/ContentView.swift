@@ -11,13 +11,14 @@ import SwiftUI
 
 struct ContentView: View {
      @EnvironmentObject var board: GameBoardVM
-  
-      var body: some View {
+    
+     let fontsize : CGFloat =  Device.isPhone ? 30 : 60
+     var body: some View {
           VStack {
             Spacer()
             Text("Tic Tac Toe")
-                    .foregroundColor(Color.blue)
-                    .font(.largeTitle)
+                    .foregroundColor(Color.blue) 
+                   .font(.system(size: fontsize, weight: .bold, design: .default))
              
             BoardView()
             Spacer()
@@ -39,5 +40,4 @@ struct ContentView_Previews: PreviewProvider {
   
     }
 }
- 
  

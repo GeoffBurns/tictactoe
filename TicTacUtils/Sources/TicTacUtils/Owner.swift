@@ -17,7 +17,7 @@ public enum Owner
         switch self
             {
             case .vacant:
-                return " "
+                return "     "
             case .naught:
                 return "0"
             case .cross:

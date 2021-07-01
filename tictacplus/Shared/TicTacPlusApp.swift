@@ -11,17 +11,17 @@ import SwiftUI
 struct TicTacPlusApp: App {
     @StateObject var board = GameBoardVM()
     var body: some Scene {
-        #if os(OSX) || os(macOS) || targetEnvironment(macCatalyst)
+    #if os(OSX) || os(macOS) || targetEnvironment(macCatalyst)
         WindowGroup {
             ContentView()
                 .environmentObject(board)
         }
-            .windowStyle(HiddenTitleBarWindowStyle())
-        #else
+        .windowStyle(HiddenTitleBarWindowStyle())
+    #else
         WindowGroup {
             ContentView()
                 .environmentObject(board)
         }
-        #endif
+    #endif
     }
 }

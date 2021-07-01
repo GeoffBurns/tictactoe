@@ -1,3 +1,3 @@
 # TicTacUtils
 
-A description of this package.
+Game logic and helper classes for Tic Tac Toe
